@@ -1,0 +1,1232 @@
+[
+    {
+        "name": "uc_admins",
+        "remark": "\u7ba1\u7406\u5458\u6743\u9650\u8868",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u7528\u6237ID"
+            },
+            "username": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u540d"
+            },
+            "allowadminsetting": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u6539\u53d8\u8bbe\u7f6e"
+            },
+            "allowadminapp": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u5e94\u7528\u5217\u8868\uff0c\u5982: \u6dfb\u52a0|\u7f16\u8f91|\u5220\u9664 \u5e94\u7528"
+            },
+            "allowadminuser": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u4f1a\u5458"
+            },
+            "allowadminbadword": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u8bbe\u7f6e\u8bcd\u8bed\u8fc7\u6ee4"
+            },
+            "allowadmintag": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406 tag"
+            },
+            "allowadminpm": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u77ed\u6d88\u606f"
+            },
+            "allowadmincredits": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u8bbe\u7f6e\u79ef\u5206\u516c\u5f0f"
+            },
+            "allowadmindomain": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u57df\u540d\u89e3\u6790"
+            },
+            "allowadmindb": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u6570\u636e\u5e93"
+            },
+            "allowadminnote": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u7ba1\u7406\u901a\u77e5"
+            },
+            "allowadmincache": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u66f4\u65b0\u7f13\u5b58"
+            },
+            "allowadminlog": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5141\u8bb8\u67e5\u770b\u548c\u7ba1\u7406\u65e5\u5fd7"
+            }
+        }
+    },
+    {
+        "name": "uc_applications",
+        "remark": "\u5e94\u7528\u5217\u8868",
+        "columns": {
+            "appid": {
+                "type": "smallint(6) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u5e94\u7528\u7684ID"
+            },
+            "type": {
+                "type": "varchar(16)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7c7b\u578b\n                  DISCUZ|SUPESITE|UCHOME|XSPACE|SUPEV|ECSHOP|ECMALL|\u5176\u4ed6"
+            },
+            "name": {
+                "type": "varchar(20)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u540d\u79f0"
+            },
+            "url": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7684URL\u5730\u5740"
+            },
+            "authkey": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7684\u5bc6\u94a5\uff0c\u6ce8\u610f: \u6bcf\u4e2a\u5e94\u7528\u7684\u5bc6\u94a5\u90fd\u4e0d\u4e00\u6837"
+            },
+            "ip": {
+                "type": "varchar(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7684IP\u5730\u5740\uff0c\u6ce8\u610f\uff1a\u4e0d\u586b\u5199\u7684\u8bdd\uff0c\u53ef\u80fd\u4f1a\u5f71\u54cd\u901f\u5ea6\uff0c\u56e0\u4e3aDNS\u89e3\u6790\u6bd4\u8f83\u8017\u8d39\u65f6\u95f4\u3002"
+            },
+            "viewprourl": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u8d44\u6599\u67e5\u770b\u5730\u5740"
+            },
+            "apifilename": {
+                "type": "varchar(30)",
+                "default": "uc.php",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u63a5\u53e3\u6587\u4ef6\u540d\u79f0"
+            },
+            "charset": {
+                "type": "varchar(8)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7684\u5b57\u7b26\u96c6 \u5982: GBK|LATIN1|UTF-8"
+            },
+            "dbcharset": {
+                "type": "varchar(8)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6570\u636e\u5e93\u7684\u5b57\u7b26\u96c6 \u5982: gbk|latin1|utf8"
+            },
+            "synlogin": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5f00\u542f\u540c\u6b65\u767b\u9646"
+            },
+            "recvnote": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "YES",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u63a5\u53d7\u901a\u77e5"
+            },
+            "extra": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u9644\u52a0\u53c2\u6570\uff0c\u683c\u5f0f\u4e3a\u5e8f\u5217\u5316\u540e\u7684\u6570\u7ec4"
+            },
+            "tagtemplates": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u663e\u793a tag \u7684\u6a21\u677f\u5185\u5bb9"
+            },
+            "allowips": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": ""
+            }
+        }
+    },
+    {
+        "name": "uc_badwords",
+        "remark": "\u8bcd\u8bed\u8fc7\u6ee4\u8868",
+        "columns": {
+            "id": {
+                "type": "smallint(6) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u7f16\u53f7"
+            },
+            "admin": {
+                "type": "varchar(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6dfb\u52a0\u8be5\u6761\u8bb0\u5f55\u7684\u7ba1\u7406\u5458\u7528\u6237\u540d"
+            },
+            "find": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u539f\u8bcd\u8bed"
+            },
+            "replacement": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u66ff\u6362\u4e3a\u7684\u8bcd\u8bed"
+            },
+            "findpattern": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u539f\u8bcd\u8bed\u7684\u6b63\u5219\u8868\u8fbe\u5f0f"
+            }
+        }
+    },
+    {
+        "name": "uc_domains",
+        "remark": "\u57df\u540d-IP \u6620\u5c04\u8868\uff0c\u7528\u6765\u907f\u514d\u9891\u7e41\u7684DNS\u89e3\u6790\u3002",
+        "columns": {
+            "id": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u7f16\u53f7"
+            },
+            "domain": {
+                "type": "char(40)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u57df\u540d"
+            },
+            "ip": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "IP"
+            }
+        }
+    },
+    {
+        "name": "uc_failedlogins",
+        "remark": "\u8bb0\u5f55\u767b\u9646\u5931\u8d25\u6b21\u6570\uff0c\u7528\u6765\u9632\u6b62\u66b4\u529b\u731c\u89e3\u7ba1\u7406\u5458\u5bc6\u7801",
+        "columns": {
+            "ip": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "IP"
+            },
+            "count": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u767b\u9646\u5931\u8d25\u7684\u6b21\u6570"
+            },
+            "lastupdate": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4e0a\u6b21\u767b\u9646\u5931\u8d25\u7684\u65f6\u95f4"
+            }
+        }
+    },
+    {
+        "name": "uc_feeds",
+        "remark": "feed \u6570\u636e\u8868",
+        "columns": {
+            "feedid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "FEED\u7684ID"
+            },
+            "appid": {
+                "type": "varchar(30)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528\u7684ID"
+            },
+            "icon": {
+                "type": "varchar(30)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "feed \u7c7b\u578b\u5bf9\u5e94\u7684\u56fe\u6807 \u5982: poll|post|trade|video"
+            },
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237id"
+            },
+            "username": {
+                "type": "varchar(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u540d"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "feed \u6dfb\u52a0\u7684\u65f6\u95f4"
+            },
+            "hash_template": {
+                "type": "varchar(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "feed \u663e\u793a\u7684\u6a21\u677f\u7684 hash \u503c\uff0c\u7528\u6765\u5224\u65ad\u5408\u5e76\u591a\u6761\u7c7b\u4f3c\u7684 feed"
+            },
+            "hash_data": {
+                "type": "varchar(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6570\u636e\u7684 hash \u503c\uff0c\u7528\u6765\u5224\u65ad\u5408\u5e76\u591a\u6761\u7c7b\u4f3c\u7684 feed"
+            },
+            "title_template": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6807\u9898\u7684\u6a21\u677f"
+            },
+            "title_data": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6807\u9898\u7684\u5185\u5bb9"
+            },
+            "body_template": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5185\u5bb9\u7684\u6a21\u677f"
+            },
+            "body_data": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5185\u5bb9\u6570\u636e"
+            },
+            "body_general": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u9644\u52a0\u6570\u636e"
+            },
+            "image_1": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e00\u5f20\u56fe\u7247\u7684 URL\uff0c\u4e00\u6761 feed \u6700\u591a\u53ef\u4ee5\u67094\u5f20\u56fe\u7247\u3002"
+            },
+            "image_1_link": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e00\u5f20\u56fe\u7247\u7684\u94fe\u63a5\u5730\u5740"
+            },
+            "image_2": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e00\u5f20\u56fe\u7247\u7684\u94fe\u63a5\u5730\u5740"
+            },
+            "image_2_link": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e8c\u5f20\u56fe\u7247\u7684\u94fe\u63a5\u5730\u5740"
+            },
+            "image_3": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e09\u5f20\u56fe\u7247\u7684 URL"
+            },
+            "image_3_link": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u4e09\u5f20\u56fe\u7247\u7684\u94fe\u63a5\u5730\u5740"
+            },
+            "image_4": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7b2c\u56db\u5f20\u56fe\u7247\u7684 URL"
+            },
+            "image_4_link": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u56db\u5f20\u56fe\u7247\u7684\u94fe\u63a5\u5730\u5740"
+            },
+            "target_ids": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6307\u5b9a\u7ed9\u54ea\u4e9b\u7528\u6237(uid)\u770b\uff0c\u5982: 1,2,3"
+            }
+        }
+    },
+    {
+        "name": "uc_friends",
+        "remark": "\u5173\u7cfb\u8868",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237id"
+            },
+            "friendid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u597d\u53cbid"
+            },
+            "direction": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u597d\u53cb\u5173\u7cfb\u6807\u793a\uff0c1:A\u52a0B\u4e3a\u597d\u53cb 2:B\u52a0\u4e86A\u4e3a\u597d\u53cb 3:A\u548cB\u5f7c\u6b64\u90fd\u52a0\u4e3a\u4e86\u597d\u53cb"
+            },
+            "version": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u7248\u672c\u53f7\uff0c\u8fd9\u4e2a\u5b57\u6bb5\u5df2\u7ecf\u5e9f\u9664\u3002\u73b0\u4f5c\u4e3a\u81ea\u589e\u5b57\u6bb5\u3002"
+            },
+            "delstatus": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5220\u9664\u72b6\u6001"
+            },
+            "comment": {
+                "type": "char(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u597d\u53cb\u6ce8\u91ca"
+            }
+        }
+    },
+    {
+        "name": "uc_mailqueue",
+        "remark": "\u53d1\u9001\u90ae\u4ef6\u961f\u5217\u8868",
+        "columns": {
+            "mailid": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u90ae\u4ef6ID"
+            },
+            "touid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u90ae\u4ef6\u76ee\u6807\u7528\u6237id"
+            },
+            "tomail": {
+                "type": "varchar(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6536\u4ef6\u4eba"
+            },
+            "frommail": {
+                "type": "varchar(100)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u4ef6\u4eba"
+            },
+            "subject": {
+                "type": "varchar(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u90ae\u4ef6\u6807\u9898"
+            },
+            "message": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u90ae\u4ef6\u5185\u5bb9"
+            },
+            "charset": {
+                "type": "varchar(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u90ae\u4ef6\u7f16\u7801"
+            },
+            "htmlon": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u662fhtml\u683c\u5f0f"
+            },
+            "level": {
+                "type": "tinyint(1)",
+                "default": "1",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u90ae\u4ef6\u7d27\u6025\u7ea7\u522b"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u8bb0\u5f55\u63d2\u5165\u65f6\u95f4"
+            },
+            "failures": {
+                "type": "tinyint(3) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u9001\u5931\u8d25\u6b21\u6570"
+            },
+            "appid": {
+                "type": "smallint(6) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6765\u6e90\u5e94\u7528id"
+            }
+        }
+    },
+    {
+        "name": "uc_memberfields",
+        "remark": "\u7528\u6237\u7684\u6269\u5c55\u5b57\u6bb5\u8868\uff0c\u6269\u5c55 uc_members",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237ID"
+            },
+            "blacklist": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u9ed1\u540d\u5355\u5217\u8868\uff0c\u7528\u6237\u540d\u5b58\u653e\uff0c\u4ee5,\u9694\u5f00"
+            }
+        }
+    },
+    {
+        "name": "uc_members",
+        "remark": "\u7528\u6237\u8868",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u7528\u6237ID"
+            },
+            "username": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u540d"
+            },
+            "password": {
+                "type": "char(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5bc6\u7801"
+            },
+            "email": {
+                "type": "char(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237Email"
+            },
+            "myid": {
+                "type": "char(30)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6f2b\u6e38id"
+            },
+            "myidkey": {
+                "type": "char(16)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6f2b\u6e38id"
+            },
+            "regip": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6ce8\u518cIP"
+            },
+            "regdate": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6ce8\u518c\u65f6\u95f4"
+            },
+            "lastloginip": {
+                "type": "int(10)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4e0a\u6b21\u767b\u9646\u7684IP(\u7a0b\u5e8f\u8f6c\u6362\u6210\u6570\u503c\u7c7b\u578b)"
+            },
+            "lastlogintime": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4e0a\u6b21\u767b\u5f55\u7684\u65f6\u95f4"
+            },
+            "salt": {
+                "type": "char(6)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5bc6\u7801\u5e72\u6270\u4e32\uff0c\u7528\u6765\u548c\u5bc6\u7801\u8fdb\u884c\u914d\u5408\u9a8c\u8bc1\uff0c\u9632\u6b62\u88ab\u66b4\u529b\u7834\u89e3"
+            },
+            "secques": {
+                "type": "char(8)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u7684\u5b89\u5168\u63d0\u95ee"
+            }
+        }
+    },
+    {
+        "name": "uc_mergemembers",
+        "remark": "\u9700\u8981\u5408\u5e76\u7684\u7528\u6237\u540d\u5217\u8868\uff0c\u7528\u6765\u89e3\u51b3\u5e94\u7528\u5408\u5e76\u65f6\u91cd\u540d\u7684\u95ee\u9898\u3002",
+        "columns": {
+            "appid": {
+                "type": "smallint(6) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528id"
+            },
+            "username": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u91cd\u590d\u7684\u7528\u6237\u540d"
+            }
+        }
+    },
+    {
+        "name": "uc_newpm",
+        "remark": "\u65b0\u77ed\u6d88\u606f\u8868",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6709\u65b0\u6d88\u606f\u7684\u7528\u6237"
+            }
+        }
+    },
+    {
+        "name": "uc_notelist",
+        "remark": "\u901a\u77e5\u5217\u8868\uff0c\u7528\u6765\u5c06 UCenter \u7684\u6570\u636e\u5206\u53d1\u5230\u5404\u4e2a\u5e94\u7528",
+        "columns": {
+            "noteid": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u901a\u77e5ID"
+            },
+            "operation": {
+                "type": "char(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u64cd\u4f5c\uff0c\u5982: updatepw|deleteuser|renameuser|test"
+            },
+            "closed": {
+                "type": "tinyint(4)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u5173\u95ed\uff0c\u5728\u901a\u77e5\u6210\u529f\uff0c\u6216\u8005\u5931\u8d25\u91cd\u8bd5\u5230\u6781\u9650\u540e\uff0c\u4f1a\u7f6e\u4e3a 1"
+            },
+            "totalnum": {
+                "type": "smallint(6) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5c1d\u8bd5\u901a\u77e5\u7684\u603b\u6b21\u6570"
+            },
+            "succeednum": {
+                "type": "smallint(6) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5c1d\u8bd5\u901a\u77e5\u7684\u603b\u6b21\u6570"
+            },
+            "getdata": {
+                "type": "mediumtext",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u901a\u8fc7 GET \u65b9\u5f0f\u4f20\u9012\u7684\u6570\u636e"
+            },
+            "postdata": {
+                "type": "mediumtext",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u901a\u8fc7 POST \u65b9\u5f0f\u4f20\u9012\u7684\u6570\u636e"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u901a\u8fc7 POST \u65b9\u5f0f\u4f20\u9012\u7684\u6570\u636e"
+            },
+            "pri": {
+                "type": "tinyint(3)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f18\u5148\u7ea7\u522b\uff0ctag \u76f8\u5173\u7684\u901a\u77e5\u7684\u4f18\u5148\u7ea7\u522b\u6bd4\u8f83\u4f4e\u3002"
+            }
+        }
+    },
+    {
+        "name": "uc_pm_indexes",
+        "remark": "\u7528\u6237\u77ed\u6d88\u606f\u7d22\u5f15\u8868",
+        "columns": {
+            "pmid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u77ed\u6d88\u606fID"
+            },
+            "plid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u5217\u8868ID"
+            }
+        }
+    },
+    {
+        "name": "uc_pm_lists",
+        "remark": "\u77ed\u6d88\u606f\u4f1a\u8bdd\u8868\u3002",
+        "columns": {
+            "plid": {
+                "type": "mediumint(8) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u4f1a\u8bdd\u5217\u8868ID"
+            },
+            "authorid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u4f5c\u8005ID"
+            },
+            "pmtype": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u7c7b\u578b"
+            },
+            "subject": {
+                "type": "varchar(80)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u6807\u9898"
+            },
+            "members": {
+                "type": "smallint(5) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u5185\u5bb9"
+            },
+            "min_max": {
+                "type": "varchar(17)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u5173\u7cfb"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5f00\u59cb\u65f6\u95f4"
+            },
+            "lastmessage": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6700\u540e\u4e00\u6761\u77ed\u6d88\u606f\u5185\u5bb9"
+            }
+        }
+    },
+    {
+        "name": "uc_pm_members",
+        "remark": "\u7528\u6237\u77ed\u6d88\u606f\u72b6\u6001\u8868\u3002",
+        "columns": {
+            "plid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u5217\u8868ID"
+            },
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u4f5c\u8005ID"
+            },
+            "isnew": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u662f\u5426\u672a\u8bfb\u77ed\u6d88\u606f"
+            },
+            "pmnum": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u77ed\u6d88\u606f\u6570\u76ee"
+            },
+            "lastupdate": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4e0a\u4e00\u6b21\u4f1a\u8bdd\u65f6\u95f4"
+            },
+            "lastdateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6700\u540e\u4e00\u6b21\u4f1a\u8bdd\u65f6\u95f4"
+            }
+        }
+    },
+    {
+        "name": "uc_pm_messages_n",
+        "remark": "\u7528\u6237\u77ed\u6d88\u606f\u6570\u636e\u8868\u3002",
+        "columns": {
+            "pmid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606fID"
+            },
+            "plid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f1a\u8bdd\u5217\u8868ID"
+            },
+            "authorid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u4f5c\u8005ID"
+            },
+            "message": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u5185\u5bb9"
+            },
+            "delstatus": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5220\u9664\u72b6\u6001 1\u53d1\u8d77\u8005\u5220\u9664, 2\u4ed6\u4eba\u5220\u9664"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u65f6\u95f4"
+            }
+        }
+    },
+    {
+        "name": "uc_pms",
+        "remark": "\u77ed\u6d88\u606f\u8868",
+        "columns": {
+            "pmid": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "\u662f",
+                "remark": "\u77ed\u6d88\u606fID"
+            },
+            "msgfrom": {
+                "type": "varchar(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u9001\u4eba\u7528\u6237\u540d"
+            },
+            "msgfromid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u9001\u4ebaid"
+            },
+            "msgtoid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u63a5\u6536\u4ebaid \u63a5\u6536id\u4e3a0\u65f6\uff0c\u8868\u793a\u516c\u5171\u6d88\u606f"
+            },
+            "folder": {
+                "type": "enum('inbox','outbox')",
+                "default": "inbox",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u6536\u4ef6\u7bb1\/\u53d1\u4ef6\u7bb1"
+            },
+            "new": {
+                "type": "tinyint(1)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u63a5\u6536\u4eba\u662f\u5426\u770b\u8fc7"
+            },
+            "subject": {
+                "type": "varchar(75)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u4e3b\u9898"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u9001\u65f6\u95f4"
+            },
+            "message": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u77ed\u6d88\u606f\u5185\u5bb9"
+            },
+            "delstatus": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5220\u9664\u72b6\u6001\uff0c1:\u8868\u793a\u63a5\u53d7\u65b9\u5220\u9664\uff0c3:\u8868\u793a\u53cc\u65b9\u90fd\u5df2\u7ecf\u5220\u9664"
+            },
+            "related": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5173\u8054ID\uff0c\u7528\u6765\u6807\u793a\u54ea\u4e9b\u77ed\u6d88\u606f\u5173\u8054\u540c\u4e00\u4e2a\u4e3b\u9898"
+            },
+            "fromappid": {
+                "type": "smallint(6) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d1\u4fe1\u4eba\u5e94\u7528\u6765\u6e90APPID"
+            }
+        }
+    },
+    {
+        "name": "uc_protectedmembers",
+        "remark": "\u4fdd\u62a4\u7528\u6237\u8bb0\u5f55\u8868",
+        "columns": {
+            "uid": {
+                "type": "mediumint(8) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237ID"
+            },
+            "username": {
+                "type": "char(15)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u7528\u6237\u540d"
+            },
+            "appid": {
+                "type": "tinyint(1) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528ID"
+            },
+            "dateline": {
+                "type": "int(10) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u53d7\u4fdd\u62a4\u7684\u65f6\u95f4"
+            },
+            "admin": {
+                "type": "char(15)",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u64cd\u4f5c\u7684\u7ba1\u7406\u5458\u540d\u79f0"
+            }
+        }
+    },
+    {
+        "name": "uc_settings",
+        "remark": "UCenter \u7684\u5404\u9879\u8bbe\u7f6e",
+        "columns": {
+            "k": {
+                "type": "varchar(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u540d\u79f0"
+            },
+            "v": {
+                "type": "text",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u503c"
+            }
+        }
+    },
+    {
+        "name": "uc_sqlcache",
+        "remark": "\u7f13\u5b58mysql\u67e5\u8be2\u8bb0\u5f55\u7684\u8868",
+        "columns": {
+            "sqlid": {
+                "type": "char(6)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "sql \u8bed\u53e5\u7684 hash \u503c"
+            },
+            "data": {
+                "type": "char(100)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e8f\u5217\u5316\u5b58\u653e\u7684sql\u8bed\u53e5\u8fd4\u56de\u7684\u7ed3\u679c"
+            },
+            "expiry": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u8fc7\u671f\u7684\u65f6\u95f4"
+            }
+        }
+    },
+    {
+        "name": "uc_tags",
+        "remark": "tag \u8868",
+        "columns": {
+            "tagname": {
+                "type": "char(20)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "TAG \u540d\u79f0"
+            },
+            "appid": {
+                "type": "smallint(6) unsigned",
+                "default": "0",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u5e94\u7528id"
+            },
+            "data": {
+                "type": "mediumtext",
+                "default": "",
+                "nullable": "YES",
+                "autoincrement": "",
+                "remark": "\u5185\u5bb9"
+            },
+            "expiration": {
+                "type": "int(10) unsigned",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "tag \u8fc7\u671f\u65f6\u95f4"
+            }
+        }
+    },
+    {
+        "name": "uc_vars",
+        "remark": "\u5b58\u653e\u8fd0\u884c\u671f\u95f4\u4ea7\u751f\u7684\u6570\u636e\u7684\u4e34\u65f6\u5185\u5b58\u8868\uff08\u53ef\u4ee5\u968f\u65f6\u6e05\u7a7a\uff09",
+        "columns": {
+            "name": {
+                "type": "char(32)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u540d\u79f0"
+            },
+            "value": {
+                "type": "char(255)",
+                "default": "",
+                "nullable": "NO",
+                "autoincrement": "",
+                "remark": "\u503c"
+            }
+        }
+    }
+]
